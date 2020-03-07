@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script>
+		
+			<!-- 객체 생성 -->
+			var gradesOne = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+			gradesOne['kylle'] = 100;
+			gradesOne.chun = 200;
+			document.write(gradesOne.kylle+"<br>");
+			document.write(gradesOne['chun']+"<br>");
+			
+			var gradesTwo = {};
+			gradesTwo['egoing'] = 10;
+			gradesTwo['k8805'] = 6;
+			gradesTwo['sori'+'algi'] = 80;
+			document.write(gradesTwo.sorialgi+"<br>");
+			
+			var gradesThree = new Object();
+			gradesThree.egoing = 10;
+			gradesThree.k8805 = 6;
+			gradesThree.sorialgi = 80;
+			document.write(gradesThree.k8805+"<br>");
+			document.write('<br>');
+			
+			<!-- for in문 사용하기 -->
+			var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+			for( var id in grades) {
+				 document.write("<li>key : "+id+" value : "+grades[id]+"</li>");
+			}
+		
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

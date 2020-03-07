@@ -2,9 +2,45 @@
 <html>
 	<head>
 		<script>
+		
 			<!-- 배열 선언 -->
-			var member = ['egoing', 'k8805', 'sorialgi'] ;
+			var members = ['egoing', 'k8805', 'sorialgi'] ;
+			
+			<!-- 배열 길이 구하기 -->
+			for(i = 0; i < members.length; i++){   
+				document.write(members[i].toUpperCase());         
+				document.write('<br />');
+			};
 
+			var li = ['a', 'b', 'c', 'd', 'e'];	
+			document.write('li배열 값 보기 :  '+li+'<br>');
+			<!-- 뒤쪽에 값 추가하기 -->
+			li.push('f');
+			document.write('li.push("f"); 실행 결과 :  '+li+'<br>');
+			<!-- 앞쪽에 값 추가하기 -->
+			li.unshift('z');
+			document.write('li.unshift("z"); 실행 결과 :  '+li+'<br>');
+			<!-- 값 여러개 넣기 -->
+			li = li.concat("g","h");
+			document.write('li = li.concat("g","h"); 실행 결과 :  '+li+'<br>');
+			<!-- 원하는 위치에 추가하기 -->
+			li.splice(2, 0, 'B'); 
+			document.write('li.splice(2,0,"B"); 실행 결과 :  '+li+'<br>');
+			<!-- 맨 앞 값 삭제하기 -->
+			li.shift();
+			document.write('li.shift(); 실행 결과 :  '+li+'<br>');			
+			<!-- 맨 뒤 값 삭제하기 -->
+			li.pop();
+			document.write('li.pop(); 실행 결과 :  '+li+'<br>');		
+			<!-- 원하는 위치 값 삭제하기 -->
+			li.splice(1,2);
+			document.write('li.splice(2,2); 실행 결과 :  '+li+'<br>');	
+			<!-- 오름차순 정렬 -->
+			li.sort();
+			document.write('li.sort(); 실행 결과 :  '+li+'<br>');			
+			<!-- 내림차순 정렬 -->
+			li.reverse();
+			document.write('li.reverse(); 실행 결과 :  '+li+'<br>');					
 		</script>
 	</head>
 	<body>
