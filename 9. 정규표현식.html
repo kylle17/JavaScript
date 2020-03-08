@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script>
+		
+			<!-- 정규표현식 만들기 -->
+			var pattern = /a/ ;
+			var pattern = new RegExp('a');
+			
+			<!-- 검색하기 -->
+			document.write(pattern.exec('abcdef')); 
+			document.write('<br>');			
+			document.write(pattern.exec('bcdefg'));     
+			document.write('<br>');	
+			document.write('abcdef'.match(pattern));
+			document.write('<br>');				
+			document.write('bcdefg'.match(pattern));
+			document.write('<br>');
+
+			<!-- 확인하기 -->
+			document.write(pattern.test('abcdef'));                 
+			document.write('<br>');
+			document.write(pattern.test('bcdefg'));                
+			document.write('<br>');
+			
+			<!-- 치환하기 -->
+			document.write('abcdef'.replace(pattern, 'A'));  
+			document.write('<br>');
+		
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
