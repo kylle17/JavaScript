@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script>
+		
+			<!-- URL 가져오기 -->
+			a = location;
+			alert(a);
+			console.log(location.toString());
+			console.log('\n');
+			console.log(location.href);
+			
+			<!-- 프로토콜 가져오기 -->
+			console.log(location.protocol);
+			console.log('\n');
+			
+			<!-- 서버주소 가져오기 -->
+			console.log(location.host);
+			console.log('\n');
+			
+			<!-- port 가져오기 -->
+			console.log(location.port);
+			console.log('\n');
+			
+			<!-- 경로 가져오기 -->
+			console.log(location.pathname);
+			console.log('\n');			
+			
+			<!-- 전달 받은 데이터 가져오기 -->	
+			console.log(location.search);
+			console.log('\n');			
+			
+			<!-- 북마크 가져오기 -->			
+			console.log(location.hash);
+			console.log('\n');		
+
+			<!-- URL 경로 변경하기 -->	
+			location = 'http://egoing.net';
+			location.href = 'http://egoing.net';
+			
+			<!-- URL 리로드 하기 -->	
+			location.reload();
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
