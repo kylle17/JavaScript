@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body id="start">
+<ul>
+    <li><a href="./532">html</a></li> 
+    <li><a href="./533">css</a></li>
+    <li><a href="./534">JavaScript</a>
+        <ul>
+            <li><a href="./535">JavaScript Core</a></li>
+            <li><a href="./536">DOM</a></li>
+            <li><a href="./537">BOM</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+<!-- DOM의 Node로 제어대상 찾기 -->
+
+     var s = document.getElementById('start');	
+	 
+	<!-- 첫번째 자식 node 찾기 -->
+	console.log(s.firstChild);   // body태그의 첫번째 자식 node로 #text를 반환한다. 
+
+	<!-- 다음 형제 node 찾기 -->
+	console.log(s.firstChild.nextSibling);     // #text node의 다음 형제 node로 ul태그를 반환한다. 
+	
+	<!-- 이전 형제 node 찾기 -->
+	console.log(s.firstChild.nextSibling.previousSibling);          // ul태그의 이전 형제 node로 #text를 반환한다. 
+	
+	<!-- 마지막 자식 node 찾기 -->
+	console.log(s.firstChild.lastChild);          // body태그의 마지막 자식 node로 #text를 반환한다. 
+	
+	<!-- 부모 node 찾기 -->
+	console.log(s.firstChild.parentNode);          // #text의 부모 node로 body태그를 반환한다. 
+	
+	<!-- 자식 node들 찾기 -->
+    var ul = s.firstChild.nextSibling
+    console.log(ul.childNodes); 
+          // text, li, text, li, text, li, text를 담은 유사배열을 반환한다. ul의 자식 객체들을 유사배열에 담아 모두 반환한다. 
+    console.log(6, ul.childNodes[1]);
+          // li(html)를 반환한다. 유사배열에 담긴 각 객체를 index를 사용해서 선택할 수 있다. 
+
+	
+</script>
+</body>
+</html>

@@ -16,32 +16,28 @@
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <script>
-<!-- DOM으로 제어하기 -->
+<!-- DOM의 Element으로 제어하기 -->
+
 	var active = document.getElementById('active');
+	
 	<!-- 태그이름 제어하기 -->
 	console.log(active.tagName);  //태그이름 가져오기
+	
 	<!-- id값 제어하기 -->
 	console.log(active.id);          // id값을 가져온다. 
     active.id = 'deactive';          // id값을 변경한다. 
+	
 	<!-- 클래스명 제어하기 -->
     console.log(active.className);                 // 클래스명을 가져온다.       
     active.className = "important current";        // 클래스명을 변경한다. 
 	active.classList.add('marked');                // 클래스명 추가하기. 
     active.classList.remove('important');          // 클래스명 제거하기. 
     active.classList.toggle('current');            // 클래스명 있으면 제거하고 없으면 추가하게 하기. 
+	
 	<!-- 속성 제어하기 -->
 	active.setAttribute('class', 'important');              // attribute 방식
 	active.className = 'important';                        // property 방식
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	
+
 	
 </script>
 </body>
