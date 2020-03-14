@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html>
 <body>
-<ul>
+<ul id="target">
     <li>HTML</li>
     <li>CSS</li>
-    <li>JavaScript</li>
 </ul>
-<ol>
-    <li>HTML</li>
-    <li class="active">CSS</li>
-    <li id="active">JavaScript</li>
-</ol>
 
-<!-- jQuery 사용을 위한 코드 -->
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <script>
 <!-- DOM의 Node로 제어하기 -->
 
-		
+	var target = document.getElementById('target');		
+	
 	<!-- node type 가져오기 -->
-
+	console.log(target.nodeType);
+	
 	<!-- node name 가져오기 -->
+	console.log(target.nodeName);
 	
 	<!-- node 추가하기 -->
-	
+	var li = document.createElement('li');
+		<!-- 부모태그 하위 맨뒤 -->
+		var text = document.createTextNode('JavaScript');     
+		li.appendChild(text);
+		target.appendChild(li);
+		<!-- 부모태그 하위 지정태그 뒤 -->
+		var text = document.createTextNode('jQuery');
+		li.appendChild(text);
+		target.insertBefore(li, target.firstChild);
+		
 	<!-- node 변경하기 -->
+	var a = document.createElement('a');          // a태그 생성하기. 
+	a.setAttribute('href', 'http://opentutorials.org/module/904/6701');
+	a.appendChild(document.createTextNode('Web browser JavaScript')); 
+	var target = document.getElementById('target');
+	target.replaceChild(a,target.firstChild);
 	
 	<!-- node 삭제하기 -->
-	
+	var target = document.getElementById('target');
+    target.parentNode.removeChild(target);
+		
 </script>
 </body>
 </html>
