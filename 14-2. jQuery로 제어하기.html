@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul>
+    <li class='target'>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<ol>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li id="active">JavaScript</li>
+</ol>
+
+<div id='source'>source</div>
+
+<!-- jQuery 사용을 위한 코드 -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+	<!-- 태그 추가하기 -->
+	$('.target').before('<div>before</div>');     // 선택한 태그 앞에 추가하기
+	$('.target').after('<div>after</div>');       // 선택한 태그 뒤에 추가하기
+	$('.target').prepend('<div>prepend</div>');     // 선택한 태그 안의 맨 앞에 추가하기
+	$('.target').append('<div>append</div>');     // 선택한 태그 안의 맨 뒤에 추가하기
+	
+	<!-- 태그 삭제하기 -->
+	$('#target1').remove();     // 선택한 태그 삭제하기
+	$('#target2').empty();     // 선택한 태그의 text 삭제하기	
+	
+	<!-- 태그 이동하기 -->
+	$('#target1').before($('#source'));     // 선택한 태그 앞으로 이동하기
+	$('#target1').after($('#source'));     // 선택한 태그 뒤로 이동하기
+	$('#target1').prepend($('#source'));     // 선택한 태그 안의 맨 앞으로 이동하기
+	$('#target1').append($('#source'));     // 선택한 태그 안의 맨 뒤로 이동하기
+	
+</script>
+</body>
+</html>
