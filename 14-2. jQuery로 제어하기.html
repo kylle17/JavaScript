@@ -2,7 +2,7 @@
 <html>
 <body>
 <ul>
-    <li class='target'>HTML</li>
+    <li id='target'>HTML</li>
     <li>CSS</li>
     <li>JavaScript</li>
 </ul>
@@ -19,20 +19,27 @@
 
 <script>
 	<!-- 태그 추가하기 -->
-	$('.target').before('<div>before</div>');     // 선택한 태그 앞에 추가하기
-	$('.target').after('<div>after</div>');       // 선택한 태그 뒤에 추가하기
-	$('.target').prepend('<div>prepend</div>');     // 선택한 태그 안의 맨 앞에 추가하기
-	$('.target').append('<div>append</div>');     // 선택한 태그 안의 맨 뒤에 추가하기
+	$('#target').before('<div>before</div>');     // 선택한 태그 앞에 추가하기
+	$('#target').after('<div>after</div>');       // 선택한 태그 뒤에 추가하기
+	$('#target').prepend('<div>prepend</div>');     // 선택한 태그 안의 맨 앞에 추가하기
+	$('#target').append('<div>append</div>');     // 선택한 태그 안의 맨 뒤에 추가하기
 	
 	<!-- 태그 삭제하기 -->
-	$('#target1').remove();     // 선택한 태그 삭제하기
-	$('#target2').empty();     // 선택한 태그의 text 삭제하기	
+	$('#target').remove();     // 선택한 태그 삭제하기
+	$('#target').empty();     // 선택한 태그의 text 삭제하기	
 	
 	<!-- 태그 이동하기 -->
-	$('#target1').before($('#source'));     // 선택한 태그 앞으로 이동하기
-	$('#target1').after($('#source'));     // 선택한 태그 뒤로 이동하기
-	$('#target1').prepend($('#source'));     // 선택한 태그 안의 맨 앞으로 이동하기
-	$('#target1').append($('#source'));     // 선택한 태그 안의 맨 뒤로 이동하기
+	$('#target').before($('#source'));     // 선택한 태그 앞으로 이동하기
+	$('#target').after($('#source'));     // 선택한 태그 뒤로 이동하기
+	$('#target').prepend($('#source'));     // 선택한 태그 안의 맨 앞으로 이동하기
+	$('#target').append($('#source'));     // 선택한 태그 안의 맨 뒤로 이동하기
+	
+	<!-- 태그 교체하기 -->
+	$('#target').replaceWith('<div>replaceWith</div>');   // 없앨 태그로 넣을 태그 교체하기
+	$('<div>replaceAll</div>').replaceAll('#target');     // 넣을 태그로 없앨 태그 교체하기
+	$('#target').replaceWith($('#source').clone());     // 없앨 태그로 넣을 태그 복사해서 교체하기
+	$('#source').clone().replaceAll('#target');     // 넣을 태그로 복사해서 없앨 태그 교체하기
+	
 	
 </script>
 </body>
