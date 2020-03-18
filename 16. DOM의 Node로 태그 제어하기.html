@@ -9,14 +9,26 @@
 
 <script>
 <!-- DOM의 Node로 제어하기 -->
-
 	var target = document.getElementById('target');		
 	
-	<!-- node type 가져오기 -->
-	console.log(target.nodeType);
 	
-	<!-- node name 가져오기 -->
-	console.log(target.nodeName);
+	
+	<!-- 태그 정보 가져오기 -->
+		<!-- node type 가져오기 -->
+		console.log(target.nodeType);		
+		<!-- node name 가져오기 -->
+		console.log(target.nodeName);
+		<!-- 태그 내용보기 -->
+		console.log(target); 
+		console.log(target.outerHTML); 
+		console.log(target.innerHTML);
+	
+	
+	
+	<!-- node 생성하기 -->
+	var li = document.createElement('li');
+	
+	
 	
 	<!-- node 추가하기 -->
 	var li = document.createElement('li');
@@ -29,16 +41,7 @@
 		li.appendChild(text);
 		target.insertBefore(li, target.firstChild);
 		
-	<!-- node 변경하기 -->
-	var a = document.createElement('a');          // a태그 생성하기. 
-	a.setAttribute('href', 'http://opentutorials.org/module/904/6701');
-	a.appendChild(document.createTextNode('Web browser JavaScript')); 
-	var target = document.getElementById('target');
-	target.replaceChild(a,target.firstChild);
-	
-	<!-- node 삭제하기 -->
-	var target = document.getElementById('target');
-    target.parentNode.removeChild(target);
+		
 		
 	<!-- 문자열로 node 추가하기 -->	
 	 var target = document.getElementById('target');
@@ -47,11 +50,31 @@
 	 target.insertAdjacentHTML('beforeend','<li>JavaScript</li>');          // 선택된 태그(id값이 target인 태그) 안의 맨뒤에 추가된다. 
 	 target.insertAdjacentHTML('afterend','<h1>Server Side</h1>');          // 선택된 태그(id값이 target인 태그) 안의 맨뒤에 추가된다. 
 
-	 <!-- 문자열로 node 변경하기 -->
+		
+		
+	<!-- node 변경하기 -->
+	var a = document.createElement('a');          // a태그 생성하기. 
+	a.setAttribute('href', 'http://opentutorials.org/module/904/6701');
+	a.appendChild(document.createTextNode('Web browser JavaScript')); 
+	var target = document.getElementById('target');
+	target.replaceChild(a,target.firstChild);
+	
+	
+	
+	<!-- 문자열로 node 변경하기 -->
 	target.innerHTML = "<li>JavaScript Core</li><li>BOM</li><li>DOM</li>";          // 선택된 태그(id값이 target인 태그) 안에 값을 모두 변경한다. 
 	target.outerHTML = "<ol><li>JavaScript Core</li><li>BOM</li><li>DOM</li></ol>";          // 선택된 태그(id값이 target인 태그)를 포함해서 모두 변경한다. 
 	target.innerText = "hello world";          // 선택된 태그(id값이 target인 태그) 안의 내용을 모두 택스트로 변경한다. 
 	target.outerText = "hello world";         // 선택된 태그(id값이 target인 태그)를 포함해서 택스트로 변경한다.
+	
+	
+		
+	<!-- node 삭제하기 -->
+	var target = document.getElementById('target');
+    target.parentNode.removeChild(target);
+		
+		
+
 	
 </script>
 </body>
