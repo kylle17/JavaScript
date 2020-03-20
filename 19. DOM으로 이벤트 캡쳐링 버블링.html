@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            html{border:5px solid red;padding:30px;}                 
+			body{border:5px solid green;padding:30px;}
+            fieldset{border:5px solid blue;padding:30px;}                 
+			input{border:5px solid black;padding:30px;}
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>event propagation</legend>
+            <input type="button" id="target" value="target">          
+        </fieldset>
+        <script>
+        function handler(event){
+            var phases = ['capturing', 'target', 'bubbling']
+            console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+        }
+		
+		<!-- 캡쳐링 -->
+        document.getElementById('target').addEventListener('click', handler, true);     // 3번째 인자값으로 true를 입력하면 캡쳐링이 적용된다. 
+        document.querySelector('fieldset').addEventListener('click', handler, true);     // false를 입력하면 버블링이 적용된다. 
+        document.querySelector('body').addEventListener('click', handler, true);
+        document.querySelector('html').addEventListener('click', handler, true);
+		
+		
+		
+		<!-- 버블링 -->
+		document.getElementById('target').addEventListener('click', handler, true);     // 3번째 인자값으로 false를 입력하면 버블링이 적용된다. 
+        document.querySelector('fieldset').addEventListener('click', handler, true);     // true를 입력하면 캡쳐링이 적용된다. 
+        document.querySelector('body').addEventListener('click', handler, true);
+        document.querySelector('html').addEventListener('click', handler, true);
+		
+		
+		
+		<!-- 전파 중단하기 -->
+		function stophandler(event){
+		var phases = ['capturing', 'target', 'bubbling']
+		console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+		event.stopPropagation();          // 전파를 중단하는 함수
+		}
+		document.getElementById('target').addEventListener('click', handler, false);
+		document.querySelector('fieldset').addEventListener('click', handler, false);
+		document.querySelector('body').addEventListener('click', stophandler, false);          // body태그에 전파를 중단 하는 함수가 들어 있다.  body태그 외의 태그들에 전파가 중단된다. 
+		document.querySelector('html').addEventListener('click', handler, false);              // 캡쳐링이면 fieldset으로 전파가 중단되고 버블링이면 html로 전파가 중단된다. 
+        </script>
+    </body>
+</html>
