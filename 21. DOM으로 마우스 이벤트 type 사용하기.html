@@ -1,0 +1,79 @@
+<html>
+    <head>
+		<style>
+		   #target{
+			width:200px;
+			height:200px;
+			background-color: green;
+			margin:10px;
+		   }
+		</style>
+    </head>  
+    <body>
+		<div id='target'></div>
+		<table>
+			<tr>
+				<td>client X</td>
+				<td>client Y</td>
+			</tr>
+			<tr>
+				<td id='elemclientx'></td>
+				<td id='elemclienty'></td>
+			</tr>
+		</table>
+		<script>
+			var t = document.getElementById('target');
+			function handler(event){
+				alert(event.type);
+			}
+			
+			<!-- 마우스 클릭 이벤트 -->
+			t.addEventListener('click', handler);
+			<!-- 마우스 더블클릭 이벤트 -->
+			t.addEventListener('dblclick', handler);
+			<!-- 마우스 우클릭 이벤트 -->
+			t.addEventListener('contextmenu', handler);
+			<!-- 마우스 클릭을 누른 이벤트 -->
+			t.addEventListener('mousedown', handler);
+			<!-- 마우스 클릭을 눌렀다 놓은 이벤트 -->
+			t.addEventListener('mouseup', handler);
+			<!-- 마우스를 움직이는 이벤트 -->
+			t.addEventListener('mousemove', handler);
+			<!-- 마우스를 해당 위치에 올린 이벤트 -->
+			t.addEventListener('mouseover', handler);
+			<!-- 해당 위치에 있던 마우스를 빼낸 이벤트 -->
+			t.addEventListener('mouseout', handler);
+			
+			
+			
+			function handlerTwo(event){
+				<!-- alt키를 누르고 마우스 이벤트 -->
+				if(event.altKey){
+					alert(event.type);        
+				} 
+				<!-- ctrl키를 누르고 마우스 이벤트 -->
+				if(event.ctrlKey){
+					alert(event.type);        
+				} 
+				<!-- shift키를 누르고 마우스 이벤트 -->
+				if(event.shiftKey){
+					alert(event.type);        
+				}    			
+			}
+			t.addEventListener('click', handlerTwo);
+			
+			
+			
+			 function handlerThree(event){
+				<!-- 마우스의 위치 (X축) -->
+				document.getElementById('elemclientx').innerHTML = event.clientX;
+				<!-- 마우스의 위치 (Y축) -->
+				document.getElementById('elemclienty').innerHTML = event.clientY; 
+			 }  
+			 t.addEventListener('mousemove', handlerThree);		
+			
+			
+			
+		</script>
+    </body>
+</html>
