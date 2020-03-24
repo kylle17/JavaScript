@@ -1,0 +1,24 @@
+
+
+<!-- Attribute로 속성 제어하기 -->
+<a id="target" href="http://opentutorials.org">opentutorials</a>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+     var t = $('#target');                         // jQuery함수로 id값이 target인 태그로 jQuery객체를 생성한다. 
+     console.log(t.attr('href'));                  // 속성값 가져오기. 
+	 t.attr('title', 'opentutorials.org');         // 속성값 설정하기.
+	 t.removeAttr('title');                        // 속성 제거하기.
+</script>
+
+
+
+
+<!-- Property로 속성 제어하기 -->
+<div id="t1">opentutorials</div>
+<div id="t2">opentutorials</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+     console.log($('#t1').prop('className'));           // 속성값 가져오기.  'className'으로 클래스명을 가져올 수 있다. 
+     console.log($('#t2').prop('class'));               // 속성값 가져오기.  'class'로 클래스명을 가져올 수 있다. 
+	 $('#t1').prop('className', 'important');           // 속성값 설정하기. 
+</script>
