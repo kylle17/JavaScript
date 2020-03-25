@@ -1,0 +1,75 @@
+
+
+
+<!-- 이벤트 제어하기 -->
+<ul>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+</ul>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('ul').on('click', function(event){
+        console.log(this.tagName);
+    })
+</script>
+
+
+<!-- 다중 이벤트 제어하기 방법1 -->
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('#target').on('focus blur', function(e){
+        $('#status').html(e.type);
+    })
+</script>
+
+
+
+<!-- 다중 이벤트 제어하기 방법2 -->
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('#target').on({
+        'focus' : function(e){
+ 
+        }, 
+        'blur' : function(e){
+             
+        }
+    })
+</script>
+
+
+
+<!-- 다중 이벤트 제어하기 방법3 -->
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+     var handler = function(e){
+          $('#status').html(e.type);
+     }
+    $('#target').on('focus', handler).on('blur' , handler);
+    })
+</script>
+
+
+
+<!-- 이벤트 삭제하기 -->
+<input type="text" id="target"></textarea>
+<input id="remove"  type="button" value="remove" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+  var handler = function(e){
+    $('#status').text(e.type+Math.random());
+  };
+  $('#target').on('focus blur', handler)
+  $('#remove').on('click' , function(e){
+    $('#target').off('focus');
+    console.log(32);
+  })
+</script>
